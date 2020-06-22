@@ -1,0 +1,106 @@
+body{
+font-family: cardo;
+}
+@font-face{
+	font-family: cardo;
+	src: url(Cardo-Italic.ttf)
+}
+.jumbotron{
+    background: #36686e;
+    height: 30%;
+}
+.logo{
+    width: auto;
+    height: 170px;
+    margin-top: -50px;
+    margin-left: -20px;   
+
+}
+.head{
+    text-align: center;
+    font-size: 60px;
+    color: floralwhite;
+    margin-top: -15%;
+
+}
+h2{
+    text-align: center;
+    color: floralwhite;
+    margin-top: -15px;
+    font-size: 30px;
+}
+.inner_container{
+    border-top: 8px solid orange;
+    margin-left: 23%;
+    margin-right: 23%;
+    width: 70%;
+    height: 105%;
+    margin-top: -8%;
+    background: white;
+    margin-bottom: 20px;
+}
+
+
+.heading {
+    font-size: 70px;
+	font-family: 'Amatic SC';
+}
+
+form select{
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+form{
+    font-size: 25px;
+    position: relative;
+    display: block;
+}
+input{
+    align-content: center;
+    
+    
+    width: 50%;
+    border-radius: 8px;
+  
+}
+label{
+    display: inline-block;
+    width: 170px;
+    margin-top: 30px;
+}
+select option{
+    margin-left: -40px;
+}
+@media (max-width: 950px)
+{
+    input{
+        width: 80%;
+    }
+}
+.panel{
+    /* border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black; */
+    border-top: 6px solid #984F18;
+    box-shadow: 0px 0px 10px black;
+    
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 23%;
+    margin-top: -8%;
+    background: white;
+    padding-left: 10%;
+}
+.image{
+    border-radius: 5px;
+    background: #36686e;
+    color: white;
+    font-size: 20px;
+}
+.image:hover{
+    background: #161f20; 
+    font-size: 18px;
+}

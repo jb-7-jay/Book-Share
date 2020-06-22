@@ -1,0 +1,113 @@
+.navfont{
+	font-family: 'Montserrat';
+}
+li:hover {
+  background-color: black;
+}
+img {
+	opacity: 0.6;
+}
+h2{
+	color: black;
+	font-style: italic;
+}
+
+.sbar {
+	
+	width: 80%;
+	
+}
+
+.txt {
+	margin-top: 20px;
+	
+	
+}
+.content{
+	margin-top: 100px;
+	margin-left: 150px;
+}
+.ct1{
+	 text-align: center; color: black;
+	 margin-left: -60%;
+}
+.ct2{
+	 text-align: center; color: black;
+	 margin-left: -50%;
+}
+lable.Wname{
+	color: white;
+	font-size: 30px;
+	line-height: 70px;
+	padding:0 50px;
+	font-weight: bold;
+}
+#li{
+	font-size: 20px;
+	color: white;
+	padding-top: 10px;
+}
+@media (max-width: 1200px){
+
+	.content{
+	margin-left: 20px;
+	margin-top: 70px;
+	}
+	.ct1{
+		
+		text-align: center;
+	}
+	.ct2{
+		
+		text-align: center;
+	}
+	.heading{
+		font-size: 60px;
+	}
+	.navbar_collapse.collapse{
+		display: none!important;
+	}
+}
+
+
+
+.sys {
+	font-size: 55px;
+	margin-top: 1px;
+	font-family: 'Trade Winds';
+	background: -webkit-linear-gradient(red, black);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.txt1 {
+	font-family: 'Trade Winds';
+}
+.name {
+	margin-bottom:15px;
+	
+	
+}
+.heading {
+	margin-bottom:10px;
+	font-size: 70px;
+	font-family: 'Amatic SC';
+}
+
+.lfb {
+	color: #009933;
+	margin-top: 0px;
+	font-family: 'Special Elite';
+}	
+.search_btn{
+	border: none;
+	outline: 20px;
+	outline-color: rgb(240, 245, 245);
+	background:#60adde;
+	color: #fff;
+	border-radius: 10px;
+}
+.search_btn:hover{
+color: #fff;
+background: #003366;	
+}

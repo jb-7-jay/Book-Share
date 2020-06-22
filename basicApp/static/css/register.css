@@ -1,0 +1,54 @@
+body {
+    background-color: #6D6EA9;
+    background-size: cover;
+    font-family: serif;
+}
+
+.Signin-box {
+    width: 40%;
+    border-radius: 20px;
+    margin: auto;
+    background: rgba(0, 0, 0, 8);
+    box-sizing: border-box;
+    padding: 50px;
+    color: #fff;
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] {
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.10);
+    padding: 12px 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    width: 100%;
+    margin: 5px;
+    font-weight: bold;
+}
+
+input[type=submit] {
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 20px;
+    color: #fff;
+    background: #60adde;
+    opacity: 1;
+}
+
+input[type=button]:hover {
+    background: #003366;
+    opacity: 1;
+}

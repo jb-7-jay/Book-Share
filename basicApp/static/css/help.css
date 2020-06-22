@@ -1,0 +1,74 @@
+.share {
+    width: 400px;
+    margin-left: 38%;
+}
+
+.lakhan {
+    text-align: center;
+    font-size: 40px;
+    font-family: inherit;
+}
+
+.row1 {
+    float: left;
+    width: 35%;
+    height: 20%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.row2 {
+    width: 35%;
+    height: 20%;
+    float: right;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+}
+
+.row3 {
+    width: 35%;
+    height: 20%;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.row4 {
+    width: 35%;
+    height: 20%;
+    float: right;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-top: 38px;
+}
+
+.square img {
+    width: 25%;
+    height: 25%;
+}
+
+.row4 img {
+    height: 40%;
+}
+
+.container {
+    width: 80%;
+    margin-top: 40%;
+    font-size: 20px;
+}
+
+.donor {
+    margin-left: 40px;
+}
+
+.container .donar ul:hover {
+    background-color: white;
+}
+
+.container h3 {
+    margin-left: 20px;
+}

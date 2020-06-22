@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HAckathon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book_details.css' %}">
+</head>
+
+<body>
+    <!-- style="background-image: url('boook.jpg'); background-size: cover;"-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" class="navfont" style="background-color: black;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <lable class="Wname">SharedShelf</lable>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li id="li"><a href="{% url 'index' %}">HOME</a></li>
+                    <li id="li"><a href="{% url 'donate' %}">LEND</a></li>
+                    <li id="li"><a class="active" href="{% url 'borrow_list' %}">BORROW</a></li>
+                    <li id="li"><a href="{% url 'help' %}">HELP</a></li>
+                    <li id="li"><a href="admin">Admin</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li id="li"><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    {% else %}
+                    <li id="li"><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="li"><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <table>
+        <tr>
+            <td class="col2">
+                <p><b>Book name:</b> {{obj.Subject}}<br>
+                    <b>Author name:</b>{{obj.Author}}<br>
+                    <b>Publication Name:</b>{{obj.Publication}}<br>
+                    <b>Branch:</b>{{obj.Branch}}<br>
+                    <b>Year:</b>{{obj.Year}}<br>
+                    <b>Subject Name:</b>{{obj.Subject}}<br>
+                    <b>Subject-Code:</b>{{obj.Subject_code}}<br>
+                    <b><img src="{{ obj.Image.url }}" width="200px" alt="Image is Unavailable"></b><br>
+                    <b>Uploaded by:</b>{{obj.owner}}<br>
+                    <b>Uploader:{{obj.owner.email}}</b>
+                    <input type="submit" value="Accept">
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</body>

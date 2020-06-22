@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/borrow_list.css' %}">
+
+    <title>Shared shelf</title>
+</head>
+
+<body>
+    <!-- style="background-image: url('boook.jpg'); background-size: cover;"-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" class="navfont" style="background-color: black;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <lable class="Wname">SharedShelf</lable>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li id="li"><a href="{% url 'index' %}">HOME</a></li>
+                    <li id="li"><a href="{% url 'donate' %}">LEND</a></li>
+                    <li id="li"><a class="active" href="{% url 'borrow_list' %}">BORROW</a></li>
+                    <li id="li"><a href="{% url 'help' %}">HELP</a></li>
+                    <li id="li"><a href="admin">Admin</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li id="li"><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    {% else %}
+                    <li id="li"><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="li"><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <select name="" id="branch">
+            <option selected hidden>Branches</option>
+            <option value="It">Information Technology</option>
+            <option value="CE">Computer Engineering</option>
+            <option value="BM">Bio-Medical</option>
+            <option value="IC">Instrumental and Control</option>
+            <option value="Met">Metallurgy</option>
+            <option value="EC">Electronics and Communication</option>
+        </select>
+        <select name="" id="Semester">
+            <option value=""selected hidden>Semester</option>
+            <option value="1st Year">1st Year</option>
+            <option value="3">Semester-3</option>
+            <option value="4">Semester-4</option>
+            <option value="5">Semester-5</option>
+            <option value="6">Semester-6</option>
+            <option value="7">Semester-7</option>
+            <option value="8">Semester-8</option>
+        </select>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div style="width:30%; position: absolute; left:5%; ">
+
+                    {% for upload in uploads %}
+                    <fieldset class="form-group ">
+                        <legend class="border-bottom mb-4 ">
+                            <a href="{% url 'book_details' upload.id %}">{{ upload.Subject }}</a>
+                        </legend>
+                        <h5><img src="{{ upload.Image.url }}" width="200px" alt="Image is Unavailable"></h5>
+
+                        Upload is Is {{ upload.id }}
+                        <h4>Owner is {{ upload.owner }}</a>
+                        </h4>
+
+                    </fieldset>
+                    {% endfor%}
+                </div>
+
+            </td>
+
+        </tr>
+    </table>
+</body>
+
+</html>

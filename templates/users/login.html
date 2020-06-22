@@ -1,0 +1,83 @@
+{% load static %} {% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+
+<body style="background-color: rgb(226, 222, 228);">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" class="navfont" style="background-color: black;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                <lable class="Wname">SharedShelf</lable>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li id="li" class="active"><a href="{% url 'index' %}">HOME</a></li>
+                    <li id="li"><a href="{% url 'donate' %}">Donate</a></li>
+                    <li id="li"><a href="{% url 'borrow_list' %}">Borrow</a></li>
+                    <li id="li"><a href="{% url 'help' %}">HELP</a></li>
+                    <li id="li"><a href="admin">Admin</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li id="li"><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    {% else %}
+                    <li id="li"><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="li"><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-{{ message.tags}} ">
+            {{ message }}
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+
+
+    <div style="width:50%;position: absolute; top: 13%; left: 15%;">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group ">
+                <legend style="font-weight: 700; font-size:30px;" class="border-bottom mb-4 ">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group ">
+                <button class="btn btn-outline-info " type="submit ">Login</button>
+            </div>
+        </form>
+        <div class="border-top pt-3 ">
+            <small class="text-muted ">
+                Need an Account? <a href="{% url 'register' %}">Sign Up Now</a>
+            </small>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

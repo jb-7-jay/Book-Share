@@ -1,0 +1,30 @@
+div.jumbotron{
+    height: 10px;
+    background-color: #36686e;
+    margin-top: 5%;
+}
+.jumbotron select{
+    font-size: 25px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#branch{
+    margin-left: 30%;
+}
+#Semester{
+    margin-left: 5%;
+    width: 15%;
+}
+table{
+    width: 100%;
+    margin-left: 10%;
+}
+img{
+    height: 300px;
+    width: 200px;
+    margin-bottom: 40px;
+    o
+}
+.row2{
+    margin-top: 200px;
+}

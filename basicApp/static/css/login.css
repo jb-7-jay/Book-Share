@@ -1,0 +1,146 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+body{
+	  background-color: #6D6EA9;
+	  background-size: cover;
+	  font-family: serif;
+}
+.login-box{
+    width: 350px;
+    position: absolute;
+		left: 40%;
+		padding: 50px;
+		background:rgba(0,0,0,8);
+		border-radius: 30px;
+		box-sizing: border-box;
+		margin-top: 100px;
+}
+.login-box h1{
+	font-size: 40px;
+  color: #fff;
+	text-align: center;
+}
+input[type=text],input[type=password]{
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0.10);
+  padding: 12px 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  width: 100%;
+  margin: 5px;
+  font-weight: bold;
+}
+input[type=button]{
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 0;
+  border-radius: 20px;
+  color: #fff;
+  background: #60adde;
+  opacity: 1;
+}
+input[type=button]:hover{
+  background: #003366;
+  opacity: 1;
+}
+#extra{
+  font-weight: bold;
+	text-align: center;
+  margin: 0 10px;
+  margin-top: 13px;
+  font-family: serif;
+	color: #fff;
+  font-size: 15px;
+}
+nav{
+	background-color: black;
+	height: 70px;
+	width: 100%;
+}
+lable.Wname{
+	color: white;
+	font-size: 35px;
+	line-height: 70px;
+	padding:0 50px;
+	font-weight: bold;
+}
+nav ul{
+	float: right;
+	margin-right: 20px;
+}
+nav ul li{
+	display: inline;
+	margin: 0px;
+	line-height: 80px;
+	font-size: 18px;
+}
+nav ul li a{
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 3px;
+	font-weight: bold;
+}
+a.login,a:hover{
+	background-color: black;
+	transition: .5s;
+}
+.checkbtn{
+	font-size: 30px;
+	float: right;
+	color: white;
+	margin-right: 40px;
+	line-height: 80px;
+	cursor: pointer;
+	display: none;
+}
+#check{
+	display: none;
+}
+@media (max-width: 952px){
+	lable.Wname{
+		font-size: 30px;
+		padding: 50px;
+	}
+	nav ul li a{
+		font-size: 16px;
+	}
+}
+@media (max-width: 858px){
+	.checkbtn{
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 55%;
+		background: Darkslategray;
+		top: 70px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+	}
+	nav ul li a{
+		font-size: 25px;
+	}
+	a.login,a:hover{
+		background: none;
+		color: #0082e6;
+	}
+	#check:checked ~ul{
+		left: 0;
+	}
+}
